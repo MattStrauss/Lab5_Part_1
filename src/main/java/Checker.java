@@ -103,6 +103,7 @@ public class Checker {
         }
 
         output.write(String.valueOf(outputString));
+        output.close();
         System.out.println(outputString);
 
     }
