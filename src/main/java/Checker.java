@@ -1,11 +1,14 @@
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.util.*;
-
+/**
+ *
+ * @author Munkhbilguun Munkhdemberel and Matt Strauss
+ */
 public class Checker {
-
     File file = new File(String.valueOf(Objects.requireNonNull(getClass().getClassLoader().getResource("Eq.txt")).getFile()));
     Scanner scanner = new Scanner(file);
-    BufferedWriter output = new BufferedWriter(new FileWriter("test.txt"));
+    PrintWriter output = new PrintWriter("test.txt", StandardCharsets.UTF_8);
     ArrayList<EquivalenceClass> equivalenceClasses = new ArrayList<>();
 
     private final int maxRow;
@@ -75,7 +78,7 @@ public class Checker {
         }
     }
 
-    private void createTestCases() throws IOException {
+    private void createTestCases() {
 
         // init the array list of equivalence classes with all from row 0
         // this essentially saves and awkward if/else in the multiplySets method below
@@ -102,7 +105,7 @@ public class Checker {
             sum = 0;
         }
 
-        output.write(String.valueOf(outputString));
+        output.println(outputString);
         output.close();
         System.out.println(outputString);
 

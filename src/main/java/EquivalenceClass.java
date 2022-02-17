@@ -1,5 +1,8 @@
 import java.util.Random;
-
+/**
+ *
+ * @author Munkhbilguun Munkhdemberel and Matt Strauss
+ */
 public class EquivalenceClass  implements Comparable<EquivalenceClass> {
     private final int minimum;
     private final int maximum;
